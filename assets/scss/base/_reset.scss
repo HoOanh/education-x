@@ -1,0 +1,94 @@
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+ul {
+    list-style: none;
+}
+
+.swiper-container {
+    overflow: visible;
+}
+
+h1 {
+    font-family: var(--font-family-title);
+
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    font-size: 3.5rem;
+    line-height: 1.3em;
+    font-weight: 600;
+
+    color: #0f437f;
+
+    @include screen($bp-tablet) {
+        margin-bottom: 2rem;
+        font-size: 5rem;
+    }
+
+    @include screen($bp-pc) {
+        margin-bottom: 2.4rem;
+        font-size: 6rem;
+    }
+}
+
+h2 {
+    font-family: var(--font-family-title);
+
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    font-size: 2.6rem;
+    line-height: 1.289em;
+    font-weight: 600;
+    color: #0f437f;
+
+    @include screen($bp-tablet) {
+        margin-bottom: 2rem;
+        font-size: 3.2rem;
+    }
+
+    @include screen($bp-pc) {
+        margin-bottom: 1.6rem;
+        font-size: 3.8rem;
+    }
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 1.8rem;
+
+    font-size: 2rem;
+    line-height: 1.5em;
+    font-weight: 700;
+
+    color: #1e3d60;
+
+    @include screen($bp-tablet) {
+        margin-bottom: 2rem;
+        font-size: 2.2rem;
+    }
+
+    @include screen($bp-pc) {
+        margin-bottom: 1.6rem;
+        font-size: 2.4rem;
+    }
+}
+
+h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-size: 1.8rem;
+    line-height: 1.5em;
+    font-weight: 700;
+
+    color: #1e3d60;
+
+    @include screen($bp-tablet) {
+        margin-bottom: 1.6rem;
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,19 @@
+$bp-tablet: convertPxToEm(map-get($breakpoints, tablet));
+$bp-pc: convertPxToEm(map-get($breakpoints, pc));
+
+$font-size-text: map-get($typography, normal) * 1rem;
+
+// ----------------------------------------------------
+
+$primary-color: map-deep-get($color, _brand, "primary");
+
+$black-color: map-deep-get($color, _black, primary);
+$white-color: map-deep-get($color, _white, primary);
+$gray-color: map-deep-get($color, _gray, primary);
+
+$text-color: map-deep-get($color, _text, primary);
+
+:root {
+  --font-family-normal: "Kumbh Sans", sans-serif;
+  --font-family-title: "Newsreader", serif;
+}

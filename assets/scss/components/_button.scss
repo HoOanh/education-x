@@ -1,0 +1,135 @@
+.dropbtn {
+    cursor: pointer;
+}
+
+.btn {
+    display: block;
+    padding: 20px 18px;
+    margin-bottom: 2rem;
+    border-radius: 100rem;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.125em;
+
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
+
+    background-color: rgb(6, 78, 164);
+    color: rgb(255, 255, 255);
+
+    transition: transform 300ms ease 0s, background-color 300ms ease 0s;
+    transform-style: preserve-3d;
+
+    @include screen($bp-tablet) {
+        padding: 24px 40px;
+    }
+}
+.btn-center {
+    @include flex(column, center, stretch);
+
+    @include screen($bp-tablet) {
+        align-items: center;
+    }
+
+    & .mg-0 {
+        margin: 0;
+    }
+}
+
+.primary-btn {
+    color: $white-color;
+
+    &:hover {
+        background-color: #0f437f;
+        transform: scale3d(0.96, 0.96, 1.01);
+    }
+
+    @include screen($bp-tablet) {
+        margin-right: 1.5rem;
+    }
+
+    @include screen($bp-pc) {
+        margin-right: 26px;
+        margin-bottom: 20px;
+    }
+}
+
+.secondary-btn {
+    color: #1e3d60;
+    background: #e7eaee;
+
+    &:hover {
+        background-color: #becad7;
+        transform: scale3d(0.96, 0.96, 1.01);
+    }
+}
+
+.inf-btn {
+    padding: 1.4rem 1.5rem;
+    border-radius: 100rem;
+    box-shadow: 0 5px 15px 0 rgba(30, 61, 96, 0.3);
+
+    font-size: 1.4rem;
+    line-height: 1.143em;
+    font-weight: 700;
+
+    @include screen($bp-tablet) {
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+    }
+}
+
+.slider-btn {
+    z-index: 3;
+    position: absolute;
+    top: 41%;
+
+    @include size(6.5rem);
+    border-radius: 50%;
+
+    font-size: 25px;
+    line-height: 3;
+    text-align: center;
+
+    background-color: #fff;
+    box-shadow: 0 5px 15px 0 rgba(30, 61, 96, 0.03);
+    color: #1e3d60;
+
+    transition: all 0.3s ease;
+
+    &::after {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    &:hover {
+        background: #064ea4;
+        color: $white-color;
+    }
+
+    @include screen($bp-pc) {
+        top: 47%;
+        @include size(8rem);
+
+        font-size: 4rem;
+        line-height: 2.25;
+        font-weight: 400;
+    }
+}
+
+.icon-prev {
+    left: 2vw;
+
+    @include screen($bp-pc) {
+        left: -1vw;
+    }
+}
+.icon-next {
+    right: 2vw;
+
+    @include screen($bp-pc) {
+        right: -1vw;
+    }
+}

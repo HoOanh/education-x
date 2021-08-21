@@ -1,0 +1,279 @@
+.footer {
+    padding-top: 7.2rem;
+    padding-bottom: 0;
+    background-color: #1e3d60;
+
+    &__head {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin-bottom: 4rem;
+
+        @include screen($bp-pc) {
+            justify-content: space-between;
+            margin-bottom: 5.4rem;
+        }
+
+        &-logo {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            margin-right: 0;
+            max-width: 100%;
+
+            transition: all 0.3s ease;
+
+            @include screen($bp-tablet) {
+                margin-right: 3rem;
+                margin-bottom: 2rem;
+                // max-width: 20.5rem;
+            }
+
+            & img {
+                vertical-align: middle;
+                width: 100%;
+            }
+
+            &:hover {
+                transform: scale3d(0.96, 0.96, 1.01);
+            }
+        }
+
+        &-content {
+            max-width: 46.8rem;
+            margin-bottom: 0;
+            color: #becad7;
+        }
+    }
+
+    &__body {
+        @include screen($bp-pc) {
+            margin-top: 12rem;
+            @include flex(row, space-between);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 5rem 0;
+
+        @include screen($bp-tablet) {
+            max-width: 60rem;
+            margin-right: 0;
+            margin-bottom: 6rem;
+        }
+
+        @include screen($bp-pc) {
+            max-width: 39.6rem;
+            margin: 0 3rem 6rem 0;
+        }
+    }
+
+    &__subscribe {
+        margin-bottom: 2.4rem;
+
+        @include screen($bp-tablet) {
+            display: flex;
+        }
+
+        @include screen($bp-pc) {
+            flex-direction: column;
+            margin-bottom: 0;
+        }
+
+        & img {
+            @include size(7.2rem);
+
+            margin-right: 2rem;
+            margin-bottom: 2.4rem;
+            border-radius: 50%;
+        }
+
+        &-title {
+            margin-bottom: 1rem;
+
+            font-family: var(--font-family-normal);
+            font-size: 2rem;
+            color: $white-color;
+
+            @include screen($bp-tablet) {
+                font-size: 2.4rem;
+                line-height: 1.5;
+            }
+        }
+
+        &-text {
+            max-width: 38rem;
+            margin-bottom: 0;
+            color: #becad7;
+        }
+    }
+
+    &__form {
+        position: relative;
+        width: 100%;
+
+        & form {
+            @include flex(column, center, stretch);
+
+            & > .input {
+                display: block;
+                width: 100%;
+                padding: 0.8rem 2rem;
+
+                min-height: 6.5rem;
+                margin-bottom: 2rem;
+
+                border-radius: 10rem;
+                border: 1px solid transparent;
+                outline: none;
+
+                color: #0f437f;
+                background: $white-color;
+                font-size: 1.8rem;
+                line-height: 1.111em;
+
+                @include screen($bp-tablet) {
+                    min-height: 7.1rem;
+                    padding-right: 12.5rem;
+                    padding-left: 2.3rem;
+                }
+            }
+
+            & > .submit-btn {
+                border: none;
+                margin: 0;
+
+                @include screen($bp-tablet) {
+                    position: absolute;
+                    top: 1.2rem;
+                    right: 1rem;
+                    padding: 1.5rem 2.4rem;
+                    font-size: 1.4rem;
+                    line-height: 1.143em;
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        @include flex(column-reverse, space-between, flex-start);
+        margin-top: 1.5rem;
+
+        @include screen($bp-pc) {
+            flex-direction: row;
+        }
+    }
+
+    &__social {
+        margin-bottom: 2rem;
+        width: 100%;
+        max-width: 29.6rem;
+
+        &-list {
+            display: grid;
+            grid-row-gap: 1.6rem;
+            grid-column-gap: 1.6rem;
+
+            align-self: stretch;
+            grid-template-columns: repeat(auto-fit, 3.6rem);
+            grid-template-rows: auto;
+            grid-auto-columns: 1fr;
+        }
+
+        &-link {
+            @include flex(row, center, center);
+            width: 36px;
+            min-height: 36px;
+            min-width: 36px;
+
+            border-radius: 50%;
+            background-color: #62778f;
+
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: #064ea4;
+            }
+
+            & > a {
+                color: #f9fafb;
+            }
+        }
+    }
+
+    &__copyright {
+        margin-bottom: 2.4rem;
+        font-size: 1.6rem;
+        color: #e7eaee;
+
+        & > a {
+            text-decoration: underline;
+            color: $white-color;
+
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #f99d77;
+            }
+        }
+
+        @include screen($bp-tablet) {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.footer-nav {
+    @include flex(row, space-between, null, wrap);
+    flex: 1;
+
+    max-width: 73rem;
+    width: 100%;
+    margin-bottom: 4rem;
+
+    @include screen($bp-pc) {
+        max-width: 65.9rem;
+        margin-bottom: 5rem;
+    }
+
+    &__wp {
+        &.page {
+            margin-bottom: 4rem;
+            width: 100%;
+            max-width: 37.2rem;
+        }
+
+        &-title {
+            margin-bottom: 3.5rem;
+            color: #fff;
+            line-height: 1.111em;
+            font-weight: 700;
+        }
+
+        &-content {
+            @include flex(row, space-between, null, wrap);
+        }
+    }
+
+    &__list {
+        @include flex(column, null, flex-start);
+        margin-right: 2rem;
+    }
+
+    &__link {
+        margin-bottom: 26px;
+        line-height: 1em;
+
+        & > a {
+            transition: color 350ms ease;
+            color: #becad7;
+            line-height: 1.111em;
+            white-space: nowrap;
+
+            &:hover {
+                color: #f99d77;
+            }
+        }
+    }
+}

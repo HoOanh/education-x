@@ -1,0 +1,33 @@
+// Font family
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&display=swap");
+
+// Configuration and helpers
+@import "./abstracts/variables-structure";
+@import "./abstracts/functions";
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+
+// Base stuff
+@import "./base/reset";
+@import "./base/global";
+
+// Layout-related sections
+@import "./layout/header";
+@import "./layout/footer";
+
+// Components
+@import "./components/button";
+@import "./components/slider";
+@import "./components/card";
+@import "./components/icon";
+
+// Page-specific styles
+@import "./pages/home";
+@import "./pages/course";
+
+// Themes
+@import "./themes/light";
+
+// Utilities
+@import "./base/utilities";

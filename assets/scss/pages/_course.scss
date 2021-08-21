@@ -1,0 +1,151 @@
+.hero-small {
+    z-index: -1;
+    position: relative;
+    padding-top: 6.8rem;
+    padding-bottom: 6.8rem;
+    background-color: rgba(225, 237, 251, 0.4);
+
+    @include screen($bp-tablet) {
+        padding-top: 10.6rem;
+        padding-bottom: 10.6rem;
+    }
+
+    @include screen($bp-pc) {
+        padding-top: 13.2rem;
+        padding-bottom: 13.2rem;
+    }
+
+    & .container {
+        text-align: center;
+
+        @include screen($bp-tablet) {
+            max-width: 62.2rem;
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        overflow: hidden;
+
+        &-1 {
+            top: initial;
+            bottom: -46.4rem;
+
+            @include screen($bp-tablet) {
+                bottom: -39rem;
+            }
+        }
+
+        &-2 {
+            bottom: initial;
+            top: -50rem;
+            right: -50rem;
+
+            @include screen($bp-tablet) {
+                top: -45rem;
+                right: -45rem;
+            }
+
+            @include screen($bp-pc) {
+                top: -30rem;
+                right: -40rem;
+            }
+        }
+
+        &-3 > img {
+            max-width: 6.1rem;
+        }
+    }
+}
+
+.featured-course {
+    padding-top: 83px;
+    padding-bottom: 82px;
+
+    @include screen($bp-tablet) {
+        padding-top: 130px;
+        padding-bottom: 128px;
+    }
+
+    @include screen($bp-pc) {
+        padding-top: 163px;
+        padding-bottom: 160px;
+    }
+
+    &__card {
+        position: relative;
+
+        @include screen($bp-pc) {
+            flex-direction: row;
+        }
+    }
+
+    &__inf {
+        right: inherit;
+        left: 1rem;
+    }
+}
+
+.courses {
+    &__top {
+        @include screen($bp-pc) {
+            @include flex(row, space-between, center);
+        }
+    }
+    &__category {
+        margin-bottom: 4rem;
+
+        @include screen($bp-tablet) {
+            @include flex(row, space-between, center);
+        }
+
+        &-link {
+            display: inline-block;
+            padding: 1.4rem 2.4rem;
+
+            font-size: 1.6rem;
+            text-transform: capitalize;
+            border: 1px solid #e7eaee;
+            background: $white-color;
+
+            @include screen($bp-pc) {
+                margin-left: 3rem;
+            }
+
+            &.active,
+            &:hover {
+                background: #0f437f;
+                color: $white-color;
+            }
+        }
+
+        &-item {
+            @include flex(row, space-around, center);
+
+            @include screen($bp-tablet) {
+                width: 50%;
+            }
+        }
+    }
+
+    &__block {
+        grid-row-gap: 4rem;
+
+        @include screen($bp-tablet) {
+            grid-row-gap: 5rem;
+        }
+
+        @include screen($bp-pc) {
+            grid-row-gap: 5.5rem;
+        }
+    }
+
+    &__list > a.card {
+        position: relative;
+    }
+}

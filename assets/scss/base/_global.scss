@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font: {
+    family: var(--font-family-normal);
+    size: 62.5%;
+  }
+  line-height: 1.25;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.8rem;
+  line-height: 1.667em;
+
+  color: #62778f;
+}
+
+section {
+  padding: 6.5rem 0;
+
+  @include screen($bp-tablet) {
+    padding: 10.2rem 0;
+  }
+
+  @include screen($bp-pc) {
+    padding: 12.7rem 0;
+  }
+}
+
+.container {
+  max-width: 1209px;
+  margin: 0 auto;
+  padding: 0 5vw;
+
+  @include screen($bp-pc) {
+    padding: 0 2.4rem;
+  }
+}
+
+.flex-col {
+  flex-direction: column;
+  margin: 0;
+}
+
+.content {
+  @include flex(column);
+
+  padding: 32px 25px 38px;
+
+  @include screen($bp-tablet) {
+    padding: 44px 48px 48px;
+  }
+
+  &__body {
+    margin-bottom: 25px;
+    color: #62778f;
+
+    @include screen($bp-tablet) {
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  &__bottom {
+    @include flex(row, null, center);
+
+    color: #1e3d60;
+    line-height: 1.111em;
+    font-weight: 700;
+
+    & img {
+      width: 48px;
+      min-height: 48px;
+      min-width: 48px;
+      margin-right: 16px;
+      border-radius: 1000px;
+    }
+  }
+}
+
+.shaper {
+  content: "";
+  z-index: -1;
+  position: absolute;
+
+  border-radius: 50%;
+  background-color: #fcdf69;
+}
+.flex-center {
+  justify-content: center;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e7eaee;
+}

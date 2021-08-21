@@ -1,0 +1,280 @@
+header {
+    background-color: $white-color;
+    box-shadow: 0 5px 15px 0 rgba(30, 61, 96, 0.03);
+
+    .header {
+        position: relative;
+        @include flex(row, space-between, center);
+
+        width: 100%;
+        max-height: 10.5rem;
+        margin: 0;
+        padding: 2.8rem 0;
+
+        &__logo-link {
+            width: 49%;
+            height: 100%;
+            overflow: hidden;
+
+            transition: all 0.3s ease;
+
+            @include screen($bp-tablet) {
+                max-width: 20.5rem;
+            }
+
+            & img {
+                vertical-align: middle;
+                width: 100%;
+            }
+
+            &:hover {
+                transform: scale3d(0.96, 0.96, 1.01);
+            }
+        }
+
+        &__cart {
+            @include flex(row, center, center);
+            margin-right: 1.5rem;
+
+            &-quantity {
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+
+                @include size(2.6rem);
+                min-height: 26px;
+                min-width: 26px;
+
+                margin-right: 0.6rem;
+                margin-left: 0;
+                padding-bottom: 0.6rem;
+
+                border-radius: 50%;
+                font-size: 1.2rem;
+                font-weight: 700;
+                line-height: 1em;
+
+                background-color: #064ea4;
+                color: #fff;
+            }
+
+            &:hover .icon-bag {
+                @extend .icon-bag:hover;
+
+                transition: all 0.3s ease;
+
+                &::before,
+                &::after {
+                    @extend .icon-bag:hover;
+
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+    }
+}
+
+.navbar {
+    z-index: 10;
+    position: absolute;
+    top: 100%;
+    right: -5vw;
+    width: 0;
+    min-height: 100vh;
+
+    background: $white-color;
+
+    transition: all 0.3s ease;
+    opacity: 0;
+    overflow: hidden;
+
+    @include screen($bp-tablet) {
+        right: 0;
+    }
+
+    @include screen($bp-pc) {
+        overflow: visible;
+    }
+
+    &.show {
+        padding-left: 10vw;
+        width: 100vw;
+        opacity: 1;
+    }
+
+    @include screen($bp-pc) {
+        position: relative;
+        min-height: 1rem;
+        width: initial;
+
+        opacity: 1;
+
+        &__list {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__link {
+        padding: 1.3rem 0;
+
+        @include screen($bp-tablet) {
+            padding: 2rem 0;
+        }
+        @include screen($bp-pc) {
+            padding: 0;
+            margin-right: 4rem;
+        }
+
+        &:hover {
+            & i {
+                transform: translateY(20%) rotateZ(-180deg);
+            }
+
+            & .dropdown {
+                @extend .dropdown.show;
+            }
+        }
+
+        & > a {
+            @extend .c-reset-link;
+
+            line-height: 1.111em;
+            font-size: 2.8rem;
+            font-weight: 700;
+
+            color: #1e3d60;
+
+            @include screen($bp-tablet) {
+                font-size: 3.2rem;
+            }
+
+            @include screen($bp-pc) {
+                font-size: 1.8rem;
+            }
+
+            & > i {
+                transform: translateY(10%) rotateZ(0);
+                transition: transform 0.3s ease;
+            }
+
+            & > i.show {
+                transform: translateY(20%) rotateZ(-180deg);
+            }
+        }
+    }
+
+    & .dropdown {
+        padding-top: 4rem;
+        display: none;
+
+        opacity: 0;
+        transition: all 0.2s ease;
+
+        @include screen($bp-pc) {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+
+            min-width: 100%;
+            width: 612.713px;
+            height: 0;
+            padding: 0;
+
+            transform: scale3d(0.7, 0.7, 1);
+            transform-style: preserve-3d;
+            overflow: hidden;
+        }
+
+        &__main {
+            @include screen($bp-tablet) {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            @include screen($bp-pc) {
+                width: 100%;
+                padding: 60px 40px 45px;
+
+                border-radius: 20px;
+                background-color: $white-color;
+
+                box-shadow: 0 24px 38px 0 rgba(30, 61, 96, 0.05);
+            }
+        }
+
+        &__nav {
+            @extend .navbar__link;
+        }
+
+        &.show {
+            display: block;
+            opacity: 1;
+            overflow: visible;
+
+            @include screen($bp-tablet) {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            @include screen($bp-pc) {
+                transform: scale3d(1, 1, 1);
+
+                padding-top: 3rem;
+                background-color: transparent;
+                height: initial;
+            }
+        }
+
+        &__pages {
+            margin-bottom: 4.6rem;
+
+            &.last {
+                margin-bottom: 0;
+            }
+
+            @include screen($bp-tablet) {
+                margin-bottom: 0;
+            }
+
+            &-title {
+                margin-bottom: 3rem;
+
+                font-size: 1.8rem;
+                font-weight: 700;
+
+                color: #1e3d60;
+            }
+
+            &-content {
+                @include screen($bp-tablet) {
+                    display: flex;
+                }
+            }
+        }
+
+        &__list {
+            @include flex(column);
+            margin-right: 3rem;
+        }
+
+        &__link {
+            display: inline-block;
+            max-height: 2rem;
+            margin-bottom: 2.6rem;
+
+            line-height: 1.111em;
+            font-size: 1.8rem;
+
+            transition: color 350ms ease;
+            white-space: nowrap;
+
+            & > a {
+                @extend .c-reset-link;
+                font-weight: 400;
+                color: #62778f;
+            }
+        }
+    }
+}
